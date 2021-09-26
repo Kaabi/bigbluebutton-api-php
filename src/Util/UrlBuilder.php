@@ -71,4 +71,16 @@ class UrlBuilder
     {
         return $params . '&checksum=' . sha1($method . $params . $this->securitySalt);
     }
+    
+    /**
+     * Public alias of buildUrl method 
+     * @param   string $method
+     * @param   string $params
+     * @param   bool   $append
+     * @return  string
+     */
+    public function buildCustomUrl($method = '', $params = '', $append = TRUE)
+    {
+        return $this->buildUrl($method, $params, $append);
+    }
 }
